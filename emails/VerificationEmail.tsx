@@ -19,6 +19,7 @@ export default function VerificationEmail({
   username,
   otp,
 }: VerificationEmailProps) {
+  console.log("yaha kia arha hai", username, otp);
   return (
     <Html>
       <Head>

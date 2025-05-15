@@ -12,6 +12,8 @@ export async function POST(req: Request) {
       isVerified: true,
     });
     if (existingUserVerifiedByUsername) {
+      console.log("check ++");
+
       return Response.json(
         {
           success: false,
@@ -25,6 +27,8 @@ export async function POST(req: Request) {
 
     if (existingUserByEmail) {
       if (existingUserByEmail.isVerified) {
+        console.log("check ++");
+
         return Response.json(
           {
             success: false,
@@ -64,7 +68,7 @@ export async function POST(req: Request) {
       username,
       verifyCode,
     });
-    if (!emailResponse.success) {
+    if (!emailResponse.ok) {
       return Response.json(
         {
           success: false,
@@ -76,12 +80,11 @@ export async function POST(req: Request) {
     return Response.json(
       {
         success: true,
-        message: "User registered successfully",
+        message: "User registered successfully.Please verify your email!",
       },
       { status: 201 }
     );
   } catch (error) {
-    console.error("Error registering user", error);
     return Response.json(
       {
         success: false,
