@@ -8,6 +8,8 @@ export async function sendVerificationEmail(
   verifiedCode: string
 ): Promise<ApiResponse> {
   try {
+    // Need to check why i am getting email as a whole object with all values of user
+    // for now I am using it as same as it is
     const { data, error } = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
       to: email.email,
