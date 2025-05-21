@@ -2,7 +2,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDebounceCallback } from "usehooks-ts";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
@@ -50,7 +50,8 @@ const SignUp = () => {
           let message = response.data.message;
           setUsernameMessage(message);
         } catch (error) {
-          setUsernameMessage(error?.response?.data?.message);
+          console.log("🚀 ~ checkUsernameUnique ~ error:", error);
+          // setUsernameMessage(error?.response?.data?.message);
         } finally {
           setIsCheckingUsername(false);
         }
