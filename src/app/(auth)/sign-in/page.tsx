@@ -2,12 +2,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { useState } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { useDebounceCallback } from "usehooks-ts";
 import { SignInSchema } from "@/schemas/signInSchema";
-import axios from "axios";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -81,6 +78,14 @@ const SignIn = () => {
             <Button type="submit">Sign In</Button>
           </form>
         </Form>
+        <div className="text-center mt-4">
+          <p className="text-sm text-gray-600">
+            Don't have an account?{" "}
+            <a href="/sign-up" className="text-blue-500 hover:underline">
+              Sign Up
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );
