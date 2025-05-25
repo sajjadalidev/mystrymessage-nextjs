@@ -12,8 +12,6 @@ export async function POST(req: Request) {
       isVerified: true,
     });
     if (existingUserVerifiedByUsername) {
-      console.log("check ++");
-
       return Response.json(
         {
           success: false,
@@ -55,7 +53,7 @@ export async function POST(req: Request) {
         verifiedCode: verifyCode,
         verifiedCodeExpiry: expiryDate,
         isVerified: false,
-        isAcceptingMessage: true,
+        isAcceptingMessages: true,
         messages: [],
       });
       await newUser.save();

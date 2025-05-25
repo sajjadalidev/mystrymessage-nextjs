@@ -69,7 +69,8 @@ const SignUp = () => {
         password: data.password,
       });
       toast.success("Sign up successful");
-      router.replace(`/verify/${response.data.username}`);
+      console.log(response.data);
+      router.replace(`/verify/${data.username}`);
     } catch (error) {
       toast.error("Sign up failed");
     } finally {
