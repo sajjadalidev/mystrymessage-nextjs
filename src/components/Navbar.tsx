@@ -13,16 +13,6 @@ const Navbar = () => {
         <Link href="/">MystryMessage</Link>
       </div>
       <ul className="flex space-x-4">
-        <li>
-          <Link href="/" className="text-white hover:text-gray-300">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link href="/about" className="text-white hover:text-gray-300">
-            About
-          </Link>
-        </li>
         {session ? (
           <>
             <li>

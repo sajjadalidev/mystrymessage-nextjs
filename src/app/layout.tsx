@@ -17,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AuthProvider>
-        <body className={` antialiased`}>{children}</body>
-        <Toaster />
+        <body className={` antialiased`}>
+          {children}
+          <Toaster />
+        </body>
       </AuthProvider>
     </html>
   );

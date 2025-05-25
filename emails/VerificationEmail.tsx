@@ -8,6 +8,7 @@ import {
   Section,
   Text,
   Button,
+  Body,
 } from "@react-email/components";
 
 interface VerificationEmailProps {
@@ -34,26 +35,28 @@ export default function VerificationEmail({
           fontStyle="normal"
         />
       </Head>
-      <Section>
-        <Preview>Verify your email address</Preview>
-        <Row>
-          <Heading>Verify your email address</Heading>
-        </Row>
-        <Row>
-          <Text>
-            Hi {username}, please use the following OTP to verify your email
-            address.
-          </Text>
-        </Row>
-        <Row>
-          <Text>{otp}</Text>
-        </Row>
-        <Row>
-          <Button href={`https://localhost:3000/verify/${otp}`}>
-            Verify Email
-          </Button>
-        </Row>
-      </Section>
+      <Body>
+        <Section>
+          <Preview>Verify your email address</Preview>
+          <Row>
+            <Heading>Verify your email address</Heading>
+          </Row>
+          <Row>
+            <Text>
+              Hi {username}, please use the following OTP to verify your email
+              address.
+            </Text>
+          </Row>
+          <Row>
+            <Text>{otp}</Text>
+          </Row>
+          <Row>
+            <Button href={`https://localhost:3032/verify/${otp}`}>
+              Verify Email
+            </Button>
+          </Row>
+        </Section>
+      </Body>
     </Html>
   );
 }
